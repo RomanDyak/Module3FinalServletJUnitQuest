@@ -1,7 +1,7 @@
 package com.javarush.module3final;
 
-import com.javarush.module3final.entity.DiverAnswer;
-import com.javarush.module3final.entity.DiverEvent;
+import com.javarush.module3final.entity.diver.DiverAnswer;
+import com.javarush.module3final.entity.diver.DiverEvent;
 import com.javarush.module3final.repository.DiverRepo;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

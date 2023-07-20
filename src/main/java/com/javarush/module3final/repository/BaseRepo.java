@@ -1,7 +1,7 @@
 package com.javarush.module3final.repository;
 
-import com.javarush.module3final.entity.BaseAnswer;
-import com.javarush.module3final.entity.BaseEvent;
+import com.javarush.module3final.entity.base.BaseAnswer;
+import com.javarush.module3final.entity.base.BaseEvent;
 
 import java.util.*;
 

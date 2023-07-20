@@ -1,4 +1,4 @@
-package com.javarush.module3final.entity;
+package com.javarush.module3final.entity.base;
 
 public class BaseAnswer {
     private String text;

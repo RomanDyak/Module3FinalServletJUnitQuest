@@ -1,31 +1,35 @@
-package com.javarush.module3final.entity;
+package com.javarush.module3final.entity.diver;
 
 import java.util.List;
 
-public class BaseEvent {
+public class DiverEvent {
     private Long id;
     private String text;
-    private List<BaseAnswer> actions;
+    private List<DiverAnswer> actions;
 
-    public BaseEvent(Long id, String text, List<BaseAnswer> actions) {
+    public DiverEvent(Long id, String text, List<DiverAnswer> actions) {
         this.id = id;
         this.text = text;
         this.actions = actions;
-    }
-    public String getText() {
-        return text;
-    }
-    public List<BaseAnswer> getActions() {
-        return actions;
     }
 
     public Long getId() {
         return id;
     }
 
+    public String getText() {
+        return text;
+    }
+
+    public List<DiverAnswer> getActions() {
+        return actions;
+    }
+
+
+
     @Override
     public String toString() {
-        return "BaseEvent{" +
+        return "DiverEvent{" +
                 "id=" + id +
                 ", text='" + text + '\'' +
                 ", actions=" + actions +

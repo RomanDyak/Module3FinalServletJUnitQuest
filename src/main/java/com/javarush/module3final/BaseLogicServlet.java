@@ -1,7 +1,7 @@
 package com.javarush.module3final;
 
-import com.javarush.module3final.entity.BaseAnswer;
-import com.javarush.module3final.entity.BaseEvent;
+import com.javarush.module3final.entity.base.BaseAnswer;
+import com.javarush.module3final.entity.base.BaseEvent;
 import com.javarush.module3final.repository.BaseRepo;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

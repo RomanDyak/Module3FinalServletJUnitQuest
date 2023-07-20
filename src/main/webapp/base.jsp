@@ -1,5 +1,5 @@
-<%@ page import="com.javarush.module3final.entity.BaseEvent" %>
-<%@ page import="com.javarush.module3final.entity.BaseAnswer" %>
+<%@ page import="com.javarush.module3final.entity.base.BaseEvent" %>
+<%@ page import="com.javarush.module3final.entity.base.BaseAnswer" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>

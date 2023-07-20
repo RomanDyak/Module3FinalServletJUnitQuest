@@ -1,7 +1,7 @@
 package com.javarush.module3final.repository;
 
-import com.javarush.module3final.entity.DiverAnswer;
-import com.javarush.module3final.entity.DiverEvent;
+import com.javarush.module3final.entity.diver.DiverAnswer;
+import com.javarush.module3final.entity.diver.DiverEvent;
 
 import java.util.*;
 

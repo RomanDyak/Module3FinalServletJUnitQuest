@@ -1,4 +1,4 @@
-package com.javarush.module3final.entity;
+package com.javarush.module3final.entity.diver;
 
 import java.util.Arrays;
 import java.util.List;
