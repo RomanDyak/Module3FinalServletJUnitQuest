@@ -28,6 +28,8 @@ public class DiverLogicServlet extends HttpServlet {
 
         String step = req.getParameter("move");
 
+        logger.info("current step {}", step);
+
         if (step == null) {
             step = "1";
             session.setAttribute("step", step);
@@ -50,6 +52,7 @@ public class DiverLogicServlet extends HttpServlet {
                         diverStats.getHeartStat(),
                         diverStats.getFeelingStat());
             }
+            getServletContext().getRequestDispatcher("/diver.jsp").forward(req, resp);
         }
 
         DiverEvent event;
@@ -71,6 +74,7 @@ public class DiverLogicServlet extends HttpServlet {
             session.setAttribute("event", event);
         }
         session.setAttribute("possibleSteps", getPossibleSteps(event));
+
         getServletContext().getRequestDispatcher("/diver.jsp").forward(req, resp);
     }
 
