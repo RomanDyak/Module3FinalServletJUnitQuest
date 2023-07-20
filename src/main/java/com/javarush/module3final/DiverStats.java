@@ -21,10 +21,20 @@ public class DiverStats {
     public void changeStats(List<Integer> change) {
         if(change == null) return;
         this.bodyStat += change.get(0);
+        if(this.bodyStat > 5) this.bodyStat = 5;
+        if(this.bodyStat < 1) this.bodyStat = 1;
         this.fearStat += change.get(1);
+        if(this.fearStat > 5) this.fearStat = 5;
+        if(this.fearStat < 1) this.fearStat = 1;
         this.heartStat += change.get(2);
+        if(this.heartStat > 5) this.heartStat = 5;
+        if(this.heartStat < 1) this.heartStat = 1;
         this.coordStat += change.get(3);
+        if(this.coordStat > 5) this.coordStat = 5;
+        if(this.coordStat < 1) this.coordStat = 1;
         this.feelingStat += change.get(4);
+        if(this.feelingStat > 5) this.feelingStat = 5;
+        if(this.feelingStat < 1) this.feelingStat = 1;
 
 
     }

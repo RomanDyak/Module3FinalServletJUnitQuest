@@ -3,7 +3,6 @@ package com.javarush.module3final;
 import com.javarush.module3final.entity.DiverAnswer;
 import com.javarush.module3final.entity.DiverEvent;
 import com.javarush.module3final.repository.DiverRepo;
-import com.oracle.wls.shaded.org.apache.xpath.operations.Div;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -36,11 +35,13 @@ public class DiverLogicServlet extends HttpServlet {
             session.setAttribute("diverStats", new DiverStats());
         }
 
+        Long currentStep = Long.parseLong(step);
+
         DiverRepo repo = (DiverRepo) session.getAttribute("repo");
         List<Long> steps = (List<Long>) session.getAttribute("possibleSteps");
         DiverStats diverStats = (DiverStats) session.getAttribute("diverStats");
 
-        if (Long.parseLong(step) >= 54L) {
+        if (currentStep >= 54L) {
             if( diverStats.getBodyStat() <= 1 || diverStats.getHeartStat() <= 1 || diverStats.getFeelingStat() <=2) {
                DiverEvent event = repo.getEvent(62L);
                 session.setAttribute("event", event);
@@ -52,8 +53,7 @@ public class DiverLogicServlet extends HttpServlet {
         }
 
         DiverEvent event;
-        if (steps != null && containsStep(steps, step)) {
-            Long currentStep = Long.parseLong(step);
+        if (steps != null && containsStep(steps, currentStep)) {
             event = repo.getEvent(currentStep);
             session.setAttribute("event", event);
 
@@ -63,7 +63,7 @@ public class DiverLogicServlet extends HttpServlet {
             diverStats.changeStats(newStatsList);
             session.setAttribute("diverStats", diverStats);
             logger.info(diverStats.toString());
-            session.setAttribute("step", step);
+            session.setAttribute("step", currentStep);
 
             session.setAttribute("statsList" ,diverStats.getStats());
         } else {
@@ -75,10 +75,10 @@ public class DiverLogicServlet extends HttpServlet {
     }
 
 
-    private boolean containsStep(List<Long> steps, String step) {
+    private boolean containsStep(List<Long> steps, Long currentStep) {
         try{
             for (Long l : steps) {
-                if(l.equals(Long.valueOf(step))) return true;
+                if(l.equals(currentStep)) return true;
             }
         } catch (Exception e) {
             return false;
