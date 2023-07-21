@@ -27,10 +27,6 @@ public class BaseRepo {
         add(new BaseEvent(7L,"Ты отклонил вызов.<br>Поражение!", new ArrayList<>()));
     }};
 
-    public int getSize() {
-        return storage.size();
-    }
-
     public BaseEvent getEvent(Long id) {
         for (BaseEvent event: storage) {
             if(event.getId().equals(id)) return event;

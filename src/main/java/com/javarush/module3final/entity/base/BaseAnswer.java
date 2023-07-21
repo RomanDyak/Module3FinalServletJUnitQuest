@@ -8,16 +8,21 @@ import static java.util.Objects.isNull;
 
 public class BaseAnswer {
 
-    private static final Logger logger = LoggerFactory.getLogger(DiverLogicServlet.class);
+    private static final Logger logger = LoggerFactory.getLogger(BaseAnswer.class);
     private String text;
     private Long move;
 
     public BaseAnswer(String text, Long move) {
-        if (isNull(text) || isNull(move)) {
-            if(isNull(text)) logger.error("Text in BaseAnswer is null");
-            if(isNull(move)) logger.error("move in BaseAnswer is null");
-            throw new IllegalArgumentException("BaseAnswer params is null");
+
+        if (isNull(text)) {
+            logger.error("text is null");
+            throw new IllegalArgumentException("Text param cannot be null.");
         }
+        if (isNull(move)) {
+            logger.error("move is blank");
+            throw new IllegalArgumentException("Move param cannot be blank.");
+        }
+
         this.text = text;
         this.move = move;
     }
