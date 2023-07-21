@@ -13,20 +13,30 @@
 %>
 <html>
 <head>
-    <title>Title</title>
-
+    <title>BaseQuest</title>
+    <link href="static/main.css" rel="stylesheet">
 </head>
 <body>
 <h1>Base!</h1>
 
-<div><%= text %>
+<div class="textBlock"><%= text %>
 </div>
+<div class="answerBlock">
 <c:if test="${!answerListEmpty}">
     <c:forEach items="${answerList}" var="answ">
     <div><a href="baseLogic?move=<c:out value="${answ.move}"/>"><c:out value="${answ.text}"/>
     </a></div>
     </c:forEach>
 </c:if>
-<div><a href="restart">К выбору квеста</a></div>
+</div>
+<br>
+<%--<div><button id="buttonRestart"><a href="restart"></a></button></div>--%>
+<div><a class="button" href="restart" style="--color:#ff1867;">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    НАЧАТЬ СНАЧАЛА!
+</a></div>
 </body>
 </html>

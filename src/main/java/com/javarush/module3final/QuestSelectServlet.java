@@ -29,12 +29,16 @@ public class QuestSelectServlet extends HttpServlet {
 
         currentSession.setAttribute("name", name);
         PrintWriter out = response.getWriter();
-        out.println("<html><body>");
-        out.println("Привет " + name + " выбери испытание");
+        out.println("<html>");
+        out.println("<head>");
+        out.println("<link href=\"static/main.css\" rel=\"stylesheet\">");
+        out.println("</head>");
+        out.println("<body>");
+        out.println("<div class=\"textBlock\"> <p class=\"text\"> Привет " + name + " выбери испытание </p>");
         out.println("");
-        out.println("<button> <a href=\"diverLogic\">Водолаз</a></button>");
-        out.println("<button> <a href=\"baseLogic\">Базовый JR</a></button>");
-        out.println("</body></html>");
+        out.println("<div class=\"container\"><div class=\"btn\"><a href=\"baseLogic\" >Базовый JR</a></div>\n" +
+                "<div class=\"btn\"><a href=\"diverLogic\" >Водолаз</a></div></div>");
+        out.println("</div></body></html>");
     }
 
     public void destroy() {

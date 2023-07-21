@@ -15,21 +15,26 @@ public class InitServlet extends HttpServlet {
 
         // Hello
         PrintWriter out = response.getWriter();
-        out.println("<html><body>");
-        out.println("<div> <p>" +
+        out.println("<html>");
+        out.println("<head>");
+        out.println("<link href=\"static/main.css\" rel=\"stylesheet\">");
+        out.println("</head>");
+        out.println("<body>");
+        out.println("<div class=\"textBlock\"> <p class=\"text\">" +
                 "Сегодня Вам предстоит пройти ряд испытаний, хватит ли смекалки, ловкости, умения? " +
                 "</p></div>");
+        out.println("<div class=\"answerBlock\">");
         out.println("<form action=\"select\" method=\"get\">\n" +
                 "  <div class=\"form-example\">\n" +
                 "    <label for=\"name\">Представьтесь пожалуйста: </label>\n" +
                 "    <input type=\"text\" name=\"name\" id=\"name\" required>\n" +
                 "  </div>\n" +
                 "  <div class=\"form-example\">\n" +
-                "    <input type=\"submit\" value=\"Погнали!\">\n" +
+                "    <input type=\"submit\" value=\"На СТАРТ!\">\n" +
                 "  </div>\n" +
                 "</form>");
 
-        out.println("</body></html>");
+        out.println("</div></body></html>");
     }
 
     public void destroy() {

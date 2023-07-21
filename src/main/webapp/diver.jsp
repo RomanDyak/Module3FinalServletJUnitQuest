@@ -15,24 +15,36 @@
 %>
 <html>
 <head>
-    <title>Title</title>
+    <title>DiverQuest</title>
+    <link href="static/main.css" rel="stylesheet">
 </head>
 <body>
 <h1>Diver</h1>
 
-<div><%= text %>
+<div class="textBlock"><%= text %>
 </div>
-<c:if test="${!answerListEmpty}">
-    <c:forEach items="${answerList}" var="answ">
-        <div><a href="diverLogic?move=<c:out value="${answ.move}"/>"><c:out value="${answ.text}"/>
-        </a></div>
+<div class="answerBlock">
+    <c:if test="${!answerListEmpty}">
+        <c:forEach items="${answerList}" var="answ">
+            <div><a href="diverLogic?move=<c:out value="${answ.move}"/>"><c:out value="${answ.text}"/>
+            </a></div>
+        </c:forEach>
+    </c:if>
+</div>
+<div class="statsBlock">
+    <c:forEach items="${statsList}" var="stat">
+        <div><c:out value="${stat}"/></div>
     </c:forEach>
-    <br>
-</c:if>
-<c:forEach items="${statsList}" var="stat">
-    <div><c:out value="${stat}"/></div>
-</c:forEach>
+</div>
+<br>
+<%--    <button><a href="restart">К выбору квеста</a></button>--%>
+    <div><a class="button" href="restart" style="--color:#ff1867;">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        НАЧАТЬ СНАЧАЛА!
+    </a></div>
 
-<div><br><a href="restart">К выбору квеста</a></div>
 </body>
 </html>
